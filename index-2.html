@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chelsea Mogore — Software Engineer & Data Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Archivo:wght@500;600;700;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EBE9E1;
+    --panel: #FFFFFF;
+    --ink: #2A1810;
+    --ink-soft: #7A5C4E;
+    --rule: #DAD5C8;
+    --orange: #E43D12;
+    --rose: #D6536D;
+    --pink: #FFA2B6;
+    --gold: #EFB11D;
+    --accent: #E43D12;
+    --accent-soft: #FFA2B6;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, .label, nav a, .btn {
+    font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .mono {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .main-col { padding: 0 48px 96px 48px; }
+
+  /* HEADER / NAV */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 40px 0 56px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .brand {
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    color: var(--orange);
+  }
+
+  nav { display: flex; align-items: center; gap: 28px; }
+
+  nav a {
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--ink);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  nav a:hover { color: var(--orange); border-color: var(--orange); }
+
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--orange);
+    display: inline-block;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 40px 0 56px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-mega {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: clamp(64px, 12vw, 148px);
+    line-height: 0.86;
+    letter-spacing: -0.03em;
+    margin: 0 0 36px 0;
+    color: var(--orange);
+    text-transform: uppercase;
+  }
+
+  .hero-mega .l2 { color: var(--rose); }
+  .hero-mega .l3 { color: var(--ink); -webkit-text-stroke: 2px var(--orange); color: transparent; }
+
+  .hero p.lede {
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: 52ch;
+    margin: 0 0 40px 0;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 0;
+  }
+
+  .stat {
+    padding: 18px 32px 18px 22px;
+    border-left: 3px solid var(--gold);
+  }
+  .stat:nth-child(2) { border-color: var(--rose); }
+  .stat:nth-child(3) { border-color: var(--pink); }
+
+  .stat .n {
+    font-family: 'Archivo', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    display: block;
+    color: var(--ink);
+  }
+
+  .stat .l {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+
+  /* SECTION GENERAL */
+  section { padding: 56px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+
+  .label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--rose);
+    margin: 0 0 18px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  section h2 {
+    font-family: 'Archivo', sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: -0.015em;
+    margin: 0 0 24px 0;
+    color: var(--ink);
+  }
+
+  /* ABOUT */
+  .about-body { max-width: 62ch; }
+  .about-body p { margin: 0 0 16px 0; }
+
+  /* PROJECTS */
+  .project {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 32px;
+    padding: 32px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .project:first-of-type { border-top: none; padding-top: 0; }
+
+  .project-meta .p-title {
+    font-family: 'Archivo', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    margin: 0 0 8px 0;
+    color: var(--ink);
+  }
+
+  .project-meta .p-sub {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+
+  .tag {
+    font-size: 11px;
+    font-family: 'IBM Plex Mono', monospace;
+    background: var(--pink);
+    color: #6E1E2E;
+    padding: 3px 9px;
+    border-radius: 20px;
+  }
+
+  .p-links a {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--orange);
+    border-bottom: 2px solid var(--gold);
+    margin-right: 18px;
+  }
+
+  .project-shot {
+    background: var(--panel);
+    border: 2px solid var(--ink);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-shot img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .project-summary {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0 0 16px 0;
+  }
+
+  /* SKILLS */
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .skill-group .g-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--orange);
+    margin-bottom: 10px;
+  }
+
+  .skill-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .skill-group li {
+    padding: 6px 0;
+    border-top: 1px solid var(--rule);
+    font-size: 15px;
+  }
+  .skill-group li:first-child { border-top: none; }
+
+  /* CONTACT */
+  .contact-row {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+
+  .contact-row a {
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--orange);
+    border-bottom: 2px solid var(--gold);
+  }
+
+  footer {
+    padding: 32px 0 60px 40px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 760px) {
+    .main-col { padding: 0 20px 60px 20px; }
+    .stat-row { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .project { grid-template-columns: 1fr; }
+    .skill-grid { grid-template-columns: 1fr; }
+    header { flex-direction: column; align-items: flex-start; gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="main-col">
+
+    <header>
+      <div class="brand">Chelsea Mogore</div>
+      <nav>
+        <a href="#about">About</a>
+        <span class="dot"></span>
+        <a href="#projects">Projects</a>
+        <span class="dot"></span>
+        <a href="#skills">Skills</a>
+        <span class="dot"></span>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="top">
+      <h1 class="hero-mega">Clean <span class="l2">data,</span><br><span class="l3">iconic</span> work</h1>
+      <p class="lede">Software engineer based in Nairobi, currently deepening a data &amp; AI specialization —
+        turning messy, real-world data into structured, analysis-ready work, and building full-stack
+        systems end to end.</p>
+      <div class="stat-row">
+        <div class="stat">
+          <span class="n mono">250</span>
+          <span class="l">records scraped &amp; cleaned</span>
+        </div>
+        <div class="stat">
+          <span class="n mono">8,790</span>
+          <span class="l">rows wrangled to analysis-ready</span>
+        </div>
+        <div class="stat">
+          <span class="n mono">1st</span>
+          <span class="l">Class Honours, Strathmore University</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <p class="label">01 — About</p>
+      <h2>Background</h2>
+      <div class="about-body">
+        <p>I'm a software engineer working as a Software Engineering Assistant at Cytonn Investments,
+          where I build full-stack systems using Vue.js, Laravel, and MySQL, along with API integrations
+          and messaging/queue systems.</p>
+        <p>I graduated from Strathmore University with a First Class Honours B.Sc. in Informatics and
+          Computer Science, and was placed on the Dean's List. I'm currently expanding into data science
+          and AI through Cyber Shujaa's Data &amp; AI Specialist Program, working hands-on with real,
+          messy datasets — web scraping, data wrangling, and the judgment calls that come with cleaning
+          data that doesn't arrive ready to use.</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <p class="label">02 — Projects</p>
+      <h2>Selected work</h2>
+
+      <div class="project">
+        <div class="project-meta">
+          <p class="p-title">Web Scraping: Countries of the World</p>
+          <p class="p-sub">Data & AI Specialist Program — Week 1</p>
+          <div class="tags">
+            <span class="tag">python</span>
+            <span class="tag">requests</span>
+            <span class="tag">beautifulsoup</span>
+            <span class="tag">pandas</span>
+          </div>
+          <p class="project-summary">Scraped all 250 countries from a live, non-tabular HTML page
+            (name, capital, population, area), then cleaned the result: checked for nulls and
+            duplicates, and converted population and area from text into proper numeric types for
+            analysis.</p>
+          <div class="p-links">
+            <a href="https://colab.research.google.com/drive/1zkfvliiePK8otnSg3XcMNEOhc3a8TiWx?usp=sharing" target="_blank" rel="noopener">View notebook →</a>
+            <a href="https://github.com/CMogore/Countries-Web-Scraping" target="_blank" rel="noopener">GitHub repo →</a>
+          </div>
+        </div>
+        <div class="project-shot"><img src="scraping_shot.png" alt="Web scraping results: 250 items found, DataFrame shape (250,4), 0 nulls, 0 duplicates, numeric type conversion"></div>
+      </div>
+
+      <div class="project">
+        <div class="project-meta">
+          <p class="p-title">Data Wrangling: Netflix Shows Dataset</p>
+          <p class="p-sub">Data & AI Specialist Program — Week 2</p>
+          <div class="tags">
+            <span class="tag">python</span>
+            <span class="tag">pandas</span>
+            <span class="tag">kaggle</span>
+          </div>
+          <p class="project-summary">Took the raw Netflix Shows dataset (8,807 titles) through the
+            full six-step wrangling process — filling thousands of missing director, cast, and
+            country values using reasoned lookup logic, correcting inconsistent dates, and splitting
+            multi-value genre data into analyzable columns.</p>
+          <div class="p-links">
+            <a href="https://www.kaggle.com/code/onchwari/chelsea-mogore-week2-datawranglingproject" target="_blank" rel="noopener">View notebook →</a>
+            <a href="https://github.com/CMogore/Data-Wrangling-Movies" target="_blank" rel="noopener">GitHub repo →</a>
+          </div>
+        </div>
+        <div class="project-shot"><img src="wrangling_shot.png" alt="Data wrangling results: 2,634 missing directors and 557 missing countries filled via lookup, 14 date conflicts corrected, final shape 8,790 by 16"></div>
+      </div>
+
+    </section>
+
+    <section id="skills">
+      <p class="label">03 — Skills</p>
+      <h2>Toolset</h2>
+      <div class="skill-grid">
+        <div class="skill-group">
+          <p class="g-title">LANGUAGES</p>
+          <ul>
+            <li>Python</li>
+            <li>PHP</li>
+            <li>JavaScript</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <p class="g-title">DATA & AI</p>
+          <ul>
+            <li>pandas</li>
+            <li>BeautifulSoup</li>
+            <li>Data wrangling</li>
+            <li>Jupyter / Kaggle Notebooks</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <p class="g-title">WEB & SYSTEMS</p>
+          <ul>
+            <li>Vue.js</li>
+            <li>Laravel</li>
+            <li>MySQL</li>
+            <li>API integrations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <p class="label">04 — Contact</p>
+      <h2>Get in touch</h2>
+      <div class="contact-row">
+        <a href="mailto:mogorechelsea@gmail.com">mogorechelsea@gmail.com</a>
+        <a href="https://github.com/CMogore" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <footer>
+      Chelsea Mogore · Nairobi, Kenya
+    </footer>
+
+  </div>
+</div>
+
+</body>
+</html>
