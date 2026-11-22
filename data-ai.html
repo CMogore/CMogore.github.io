@@ -73,11 +73,16 @@
   .project-shot img { width: 100%; height: auto; display: block; }
   .project-summary { font-size: 15px; color: var(--ink-soft); margin: 0 0 16px 0; }
 
-  .challenge { display: grid; grid-template-columns: 1fr 1.3fr; gap: 32px; padding: 36px 0; border-top: 1px solid var(--rule); }
+  .challenge { display: block; padding: 40px 0; border-top: 1px solid var(--rule); }
   .challenge:first-of-type { border-top: none; padding-top: 0; }
   .challenge .c-title { font-family: 'Archivo', sans-serif; font-size: 22px; font-weight: 900; margin: 0 0 8px 0; color: var(--ink); }
   .challenge .c-sub { font-size: 13px; color: var(--ink-soft); margin-bottom: 16px; }
-  .challenge-shot { background: var(--panel); border: 2px solid var(--ink); border-radius: 6px; overflow: hidden; align-self: start; }
+  .challenge-head { margin-bottom: 20px; }
+  .challenge-shot { background: var(--panel); border: 2px solid var(--ink); border-radius: 6px; overflow: hidden; margin-bottom: 32px; }
+  .c-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .c-col .c-block { margin-bottom: 26px; }
+  .c-col .c-block:last-child { margin-bottom: 0; }
+  .challenge .c-links { margin-top: 28px; }
   .challenge-shot img { width: 100%; height: auto; display: block; }
   .c-block { margin-bottom: 18px; }
   .c-block:last-child { margin-bottom: 0; }
@@ -102,7 +107,8 @@
     footer { padding-left: 20px; }
     header { flex-direction: column; align-items: flex-start; gap: 14px; }
     .project { grid-template-columns: 1fr; }
-    .challenge { grid-template-columns: 1fr; }
+    .c-cols { grid-template-columns: 1fr; gap: 0; }
+    .c-col + .c-col { margin-top: 26px; }
     .skills-grid { grid-template-columns: 1fr; }
   }
 </style>
@@ -233,21 +239,35 @@
       <h2>Challenge writeups</h2>
 
       <div class="challenge">
-        <div class="challenge-meta">
+        <div class="challenge-head">
           <p class="c-title">Hotel Performance Dashboard</p>
           <p class="c-sub">Data &amp; AI Specialist Program — Power BI End-to-End Project</p>
           <div class="tags"><span class="tag">power bi</span><span class="tag">dax</span><span class="tag">data modeling</span></div>
-
-          <div class="c-block">
-            <h4>Problem Statement</h4>
+        </div>
+        <div class="challenge-shot"><img src="hotel_dashboard_shot.png" alt="Hotel performance Power BI dashboard, Home tab with top-line KPIs"></div>
+        <div class="c-cols">
+          <div class="c-col">
+            <div class="c-block">
+              <h4>Problem Statement</h4>
             <p>AtliQ Grands, a hotel chain, needed an interactive dashboard for revenue, occupancy,
               and booking performance across its properties — something leadership could use for
               high-level tracking and week-over-week comparison, built on five related tables
               (dates, hotels, rooms, aggregated bookings, and individual bookings).</p>
           </div>
-
-          <div class="c-block">
-            <h4>Approach</h4>
+            <div class="c-block">
+              <h4>Tools Used</h4>
+            <p>Power BI Desktop, DAX</p>
+          </div>
+            <div class="c-block">
+              <h4>Lessons Learned</h4>
+            <p>This was my first time working with Power BI, so most of the learning curve was just
+              getting comfortable with the tool itself — writing and debugging DAX measures, and
+              making sure every visual pulled from the right relationship across the five tables.</p>
+          </div>
+          </div>
+          <div class="c-col">
+            <div class="c-block">
+              <h4>Approach</h4>
             <ul>
               <li>Modeled the relationships between the date, hotel, room, and two booking fact tables before building anything visual.</li>
               <li>Built out 26 DAX measures and 2 calculated columns — core metrics (Revenue, Occupancy %, ADR, RevPAR, Realisation %) plus week-over-week change measures for each.</li>
@@ -255,68 +275,55 @@
               <li>Added a detailed, sortable <strong>Property by Key Metrics</strong> table alongside the summary visuals — every property broken out by revenue, RevPAR, occupancy, ADR, DSRN, DBRN, DURN, realisation %, cancellation %, and average rating — plus City and Room Type filters, so the dashboard works for both a high-level glance and a property-level deep dive.</li>
             </ul>
           </div>
-
-          <div class="c-block">
-            <h4>Tools Used</h4>
-            <p>Power BI Desktop, DAX</p>
-          </div>
-
-          <div class="c-block">
-            <h4>Lessons Learned</h4>
-            <p>This was my first time working with Power BI, so most of the learning curve was just
-              getting comfortable with the tool itself — writing and debugging DAX measures, and
-              making sure every visual pulled from the right relationship across the five tables.</p>
-          </div>
-
-          <div class="c-links">
-            <a href="#" target="_blank" rel="noopener">View dashboard →</a>
           </div>
         </div>
-        <div class="challenge-shot"><img src="hotel_dashboard_shot.png" alt="Hotel performance Power BI dashboard, Home tab with top-line KPIs"></div>
+        <div class="c-links">
+            <a href="#" target="_blank" rel="noopener">View dashboard →</a>
+          </div>
       </div>
-
       <div class="challenge">
-        <div class="challenge-meta">
+        <div class="challenge-head">
           <p class="c-title">HR Management Dashboard</p>
           <p class="c-sub">Data &amp; AI Specialist Program — Tableau End-to-End Project</p>
           <div class="tags"><span class="tag">tableau</span><span class="tag">data modeling</span><span class="tag">hr analytics</span></div>
-
-          <div class="c-block">
-            <h4>Problem Statement</h4>
+        </div>
+        <div class="challenge-shot"><img src="hr_dashboard_shot.png" alt="HR management Tableau dashboard, Overview tab with top-line KPIs"></div>
+        <div class="c-cols">
+          <div class="c-col">
+            <div class="c-block">
+              <h4>Problem Statement</h4>
             <p>An HR manager needed an interactive dashboard combining high-level summary views
               with a detailed, filterable employee list — covering headcount, demographics, and
               income analysis — so leadership could track workforce trends while still drilling
               into individual employee records when needed.</p>
           </div>
-
-          <div class="c-block">
-            <h4>Approach</h4>
-            <ul>
-              <li>Structured the summary view into three sections — Overview, Demographics, and Income Analysis — each answering a distinct question about the workforce.</li>
-              <li>Built 14 calculated fields covering age, tenure, hiring/termination status, and ranking logic (Age, Age Group, Status, Full Name, Total/% Hired, Total/% Active, Total/% Terminated, Duration of Hire, Top 2 Rank, and highlighted-max measures).</li>
-              <li>Added a full employee list — name, department, position, gender, age, education, salary — filterable by any column, alongside the summary dashboards.</li>
-            </ul>
-          </div>
-
-          <div class="c-block">
-            <h4>Tools Used</h4>
+            <div class="c-block">
+              <h4>Tools Used</h4>
             <p>Tableau Public</p>
           </div>
-
-          <div class="c-block">
-            <h4>Lessons Learned</h4>
+            <div class="c-block">
+              <h4>Lessons Learned</h4>
             <p>This was also my first time working with Tableau, and the biggest adjustment was its
               container-based layout — you have to plan and set up the containers before placing any
               visuals, rather than dropping things onto the canvas and arranging them afterward.
               Keeping every element correctly nested and positioned inside those containers took real
               care and a few re-dos.</p>
           </div>
-
-          <div class="c-links">
-            <a href="https://public.tableau.com/app/profile/chelsea.mogore/viz/Chelsea_Mogore_Week05_TableauProject/HRDashboard" target="_blank" rel="noopener">View dashboard →</a>
+          </div>
+          <div class="c-col">
+            <div class="c-block">
+              <h4>Approach</h4>
+            <ul>
+              <li>Structured the summary view into three sections — Overview, Demographics, and Income Analysis — each answering a distinct question about the workforce.</li>
+              <li>Built 14 calculated fields covering age, tenure, hiring/termination status, and ranking logic (Age, Age Group, Status, Full Name, Total/% Hired, Total/% Active, Total/% Terminated, Duration of Hire, Top 2 Rank, and highlighted-max measures).</li>
+              <li>Added a full employee list — name, department, position, gender, age, education, salary — filterable by any column, alongside the summary dashboards.</li>
+            </ul>
+          </div>
           </div>
         </div>
-        <div class="challenge-shot"><img src="hr_dashboard_shot.png" alt="HR management Tableau dashboard, Overview tab with top-line KPIs"></div>
+        <div class="c-links">
+            <a href="https://public.tableau.com/app/profile/chelsea.mogore/viz/Chelsea_Mogore_Week05_TableauProject/HRDashboard" target="_blank" rel="noopener">View dashboard →</a>
+          </div>
       </div>
 
     </section>
