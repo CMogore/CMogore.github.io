@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chelsea Mogore — Data &amp; AI Specialist</title>
+<meta name="description" content="Chelsea Mogore's data and AI work: web scraping, data wrangling, analysis, machine learning, deep learning and NLP projects.">
+<meta property="og:title" content="Chelsea Mogore — Data &amp; AI Specialist">
+<meta property="og:description" content="Chelsea Mogore's data and AI work: web scraping, data wrangling, analysis, machine learning, deep learning and NLP projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Archivo:wght@500;600;700;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EBE9E1; --panel: #FFFFFF; --ink: #2A1810; --ink-soft: #7A5C4E; --rule: #DAD5C8;
+    --orange: #E43D12; --rose: #D6536D; --pink: #FFA2B6; --gold: #EFB11D;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Newsreader', Georgia, serif; font-size: 17px; line-height: 1.6; }
+  h1, h2, h3, .label, nav a, .btn { font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+  a { color: inherit; }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  .main-col { padding: 0 48px 96px 48px; }
+
+  header { display: flex; justify-content: space-between; align-items: baseline; padding: 40px 0 56px 0; border-bottom: 1px solid var(--rule); flex-wrap: wrap; gap: 16px; }
+  .brand { font-weight: 900; font-size: 18px; letter-spacing: -0.01em; color: var(--orange); text-decoration: none; }
+  nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+  nav a { font-size: 13px; font-weight: 700; text-decoration: none; color: var(--ink); border-bottom: 1px solid transparent; padding-bottom: 2px; transition: color 0.15s ease, border-color 0.15s ease; }
+  nav a:hover { color: var(--orange); border-color: var(--orange); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); display: inline-block; }
+  nav a.switch { color: var(--orange); }
+
+  .page-header { padding: 48px 0 40px 0; border-bottom: 1px solid var(--rule); }
+  .page-header .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--rose); margin: 0 0 18px 0; }
+  .page-header .lede { font-size: 18px; color: var(--ink-soft); max-width: 62ch; margin: 24px 0 0 0; }
+
+  .hero-mega { font-family: 'Archivo', sans-serif; font-weight: 900; font-size: clamp(48px, 8vw, 100px); line-height: 0.9; letter-spacing: -0.03em; margin: 0; color: var(--orange); text-transform: uppercase; }
+  .hero-mega .l2 { color: var(--rose); }
+  .hero-mega .l3 { color: transparent; -webkit-text-stroke: 2px var(--orange); }
+
+  .empty-state { border: 2px dashed var(--rule); border-radius: 8px; padding: 48px 32px; text-align: center; }
+  .empty-state p.big { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 19px; margin: 0 0 10px 0; color: var(--ink); }
+  .empty-state p.small { margin: 0 auto; color: var(--ink-soft); font-size: 15px; max-width: 50ch; }
+
+  section { padding: 56px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+  .label { font-size: 13px; font-weight: 700; color: var(--rose); margin: 0 0 18px 0; text-transform: uppercase; letter-spacing: 0.04em; }
+  section h2 { font-family: 'Archivo', sans-serif; font-size: 32px; font-weight: 900; letter-spacing: -0.015em; margin: 0 0 24px 0; color: var(--ink); }
+
+  .resume-block { margin-bottom: 36px; }
+  .resume-block h3 { font-family: 'Archivo', sans-serif; font-size: 18px; font-weight: 700; margin: 0 0 14px 0; color: var(--ink); }
+  .edu-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; flex-wrap: wrap; gap: 8px; }
+  .edu-row .org { font-weight: 600; font-size: 16px; }
+  .edu-row .dates { font-size: 13px; color: var(--ink-soft); font-family: 'IBM Plex Mono', monospace; }
+  .resume-block p.role { margin: 0 0 10px 0; color: var(--ink-soft); font-size: 15px; }
+  ul.resume-list { margin: 0; padding-left: 20px; }
+  ul.resume-list li { margin-bottom: 8px; font-size: 15.5px; }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 8px; }
+  .skill-group .g-title { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 500; color: var(--orange); margin-bottom: 10px; }
+  .skill-group p { margin: 0; font-size: 14.5px; color: var(--ink); line-height: 1.7; }
+
+  .project { display: grid; grid-template-columns: 1fr 1.3fr; gap: 32px; padding: 32px 0; border-top: 1px solid var(--rule); }
+  .project:first-of-type { border-top: none; padding-top: 0; }
+  .project-meta .p-title { font-family: 'Archivo', sans-serif; font-size: 22px; font-weight: 900; margin: 0 0 8px 0; color: var(--ink); }
+  .project-meta .p-sub { font-size: 13px; color: var(--ink-soft); margin-bottom: 14px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .tag { font-size: 11px; font-family: 'IBM Plex Mono', monospace; background: var(--pink); color: #6E1E2E; padding: 3px 9px; border-radius: 20px; }
+  .p-links a { display: inline-block; font-size: 13px; font-weight: 700; text-decoration: none; color: var(--orange); border-bottom: 2px solid var(--gold); margin-right: 18px; }
+  .project-shot { background: var(--panel); border: 2px solid var(--ink); border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .project-shot img { width: 100%; height: auto; display: block; }
+  .project-summary { font-size: 15px; color: var(--ink-soft); margin: 0 0 16px 0; }
+
+  .challenge { display: grid; grid-template-columns: 1fr 1.3fr; gap: 32px; padding: 36px 0; border-top: 1px solid var(--rule); }
+  .challenge:first-of-type { border-top: none; padding-top: 0; }
+  .challenge .c-title { font-family: 'Archivo', sans-serif; font-size: 22px; font-weight: 900; margin: 0 0 8px 0; color: var(--ink); }
+  .challenge .c-sub { font-size: 13px; color: var(--ink-soft); margin-bottom: 16px; }
+  .challenge-shot { background: var(--panel); border: 2px solid var(--ink); border-radius: 6px; overflow: hidden; align-self: start; }
+  .challenge-shot img { width: 100%; height: auto; display: block; }
+  .c-block { margin-bottom: 18px; }
+  .c-block:last-child { margin-bottom: 0; }
+  .c-block h4 { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 500; color: var(--rose); text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 8px 0; }
+  .c-block p, .c-block ul { margin: 0; font-size: 15px; color: var(--ink); line-height: 1.65; }
+  .c-block ul { padding-left: 20px; }
+  .c-block ul li { margin-bottom: 6px; }
+  .c-links a { display: inline-block; font-size: 13px; font-weight: 700; text-decoration: none; color: var(--orange); border-bottom: 2px solid var(--gold); margin-right: 18px; }
+
+  .more-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; padding-top: 32px; border-top: 1px solid var(--rule); }
+  .btn-more { font-family: 'Archivo', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; color: #fff; background: var(--orange); padding: 12px 22px; border-radius: 4px; transition: background 0.15s ease; }
+  .btn-more:hover { background: var(--rose); }
+  .more-note { font-size: 14px; color: var(--ink-soft); }
+
+  .contact-row { display: flex; gap: 32px; flex-wrap: wrap; align-items: baseline; }
+  .contact-row a { font-size: 16px; font-weight: 700; text-decoration: none; color: var(--orange); border-bottom: 2px solid var(--gold); }
+
+  footer { padding: 32px 0 60px 48px; font-size: 13px; color: var(--ink-soft); max-width: 1180px; margin: 0 auto; }
+
+  @media (max-width: 760px) {
+    .main-col { padding: 0 20px 60px 20px; }
+    footer { padding-left: 20px; }
+    header { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .project { grid-template-columns: 1fr; }
+    .challenge { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="main-col">
+
+    <header>
+      <a class="brand" href="index.html">Chelsea Mogore</a>
+      <nav>
+        <a href="index.html">Home</a><span class="dot"></span>
+        <a href="#resume">Resume</a><span class="dot"></span>
+        <a href="#projects">Projects</a><span class="dot"></span>
+        <a href="projects.html">All Projects</a><span class="dot"></span>
+        <a href="#lab-challenges">Lab Challenges</a><span class="dot"></span>
+        <a href="#contact">Contact</a><span class="dot"></span>
+        <a class="switch" href="software-engineering.html">Software Engineering →</a>
+      </nav>
+    </header>
+
+    <section class="page-header">
+      <p class="eyebrow">CHELSEA MOGORE · DATA &amp; AI SPECIALIST</p>
+      <h1 class="hero-mega">Clean <span class="l2">data,</span><br><span class="l3">iconic</span> work</h1>
+      <p class="lede">Hands-on work with real, imperfect datasets — scraping raw HTML, wrangling
+        thousands of missing values with reasoned logic rather than shortcuts, running full
+        exploratory analyses that hold up to scrutiny, tuning and deploying machine learning models, and
+        working with neural networks and language models.</p>
+    </section>
+
+    <section id="resume">
+      <p class="label">Resume</p>
+      <h2>Background</h2>
+
+      <div class="resume-block">
+        <h3>Education</h3>
+        <div class="edu-row">
+          <span class="org">Strathmore University</span>
+          <span class="dates">2020 – 2024</span>
+        </div>
+        <p class="role">B.Sc. Informatics and Computer Science</p>
+        <ul class="resume-list">
+          <li>Graduated with First Class Honours; placed on the Dean's List.</li>
+          <li>Relevant coursework: Data Structures &amp; Algorithms, AI &amp; Machine Learning.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <h3>Training</h3>
+        <div class="edu-row">
+          <span class="org">Data &amp; AI Specialist Program — Cyber Shujaa</span>
+          <span class="dates">Sept 2026 – Present</span>
+        </div>
+        <ul class="resume-list">
+          <li>Hands-on program covering the full data pipeline: web scraping, data wrangling,
+            exploratory data analysis, regression and classification, hyperparameter tuning and model deployment,
+            deep learning with neural networks, and natural language processing with BERT.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <h3>Skills</h3>
+        <div class="skills-grid">
+          <div class="skill-group"><p class="g-title">LANGUAGES</p><p>Python, Java, SQL</p></div>
+          <div class="skill-group"><p class="g-title">DATA &amp; AI TOOLS</p><p>pandas, BeautifulSoup, NumPy, Matplotlib, Seaborn, scikit-learn, statsmodels, TensorFlow/Keras, Hugging Face Transformers, Streamlit, Tableau, Power BI</p></div>
+          <div class="skill-group"><p class="g-title">PLATFORMS</p><p>Jupyter / Kaggle Notebooks, Google Colab, GitHub</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <p class="label">Projects</p>
+      <h2>Featured work</h2>
+
+      <div class="project">
+        <div class="project-meta">
+          <p class="p-title">Linear Regression: Predicting Home Prices</p>
+          <p class="p-sub">Regression modelling</p>
+          <div class="tags"><span class="tag">python</span><span class="tag">pandas</span><span class="tag">scikit-learn</span><span class="tag">statsmodels</span></div>
+          <p class="project-summary">Built a linear regression model to predict home prices from 100 listings. Cleaned the data (text prices, &quot;None&quot; garages misread as missing, three outliers removed), encoded the categorical columns, and tested the model: R&sup2; of 0.976 and an average error of about $28,600 on unseen homes, with all five regression assumptions checked and met.</p>
+          <div class="p-links"><a href="https://colab.research.google.com/drive/1FuebijUm6QI0EQqUVmcc-LLYDE2FTPvL?usp=sharing" target="_blank" rel="noopener">View notebook →</a></div>
+        </div>
+        <div class="project-shot"><img src="linreg_shot.png" alt="Linear regression summary: test R-squared 0.976, average error about $28,600, 100 homes cleaned to 97, all five assumptions met"></div>
+      </div>
+      <div class="project">
+        <div class="project-meta">
+          <p class="p-title">Tuning &amp; Deployment: California House Prices</p>
+          <p class="p-sub">Model tuning &amp; deployment</p>
+          <div class="tags"><span class="tag">python</span><span class="tag">scikit-learn</span><span class="tag">gridsearchcv</span><span class="tag">streamlit</span></div>
+          <p class="project-summary">Built a scikit-learn pipeline (scaling with a ColumnTransformer plus a KNN regressor) on 20,640 California block groups and tuned it with GridSearchCV and 5-fold cross-validation: R&sup2; of 0.731 in cross-validation and 0.722 on the test set. The whole pipeline was saved with joblib, reloaded to confirm it works, and used as the model behind a Streamlit price-prediction app.</p>
+          <div class="p-links"><a href="https://colab.research.google.com/drive/1Rh43IVhW99RmEOBxs5qjoqKIUbvLt_DI?usp=sharing" target="_blank" rel="noopener">View notebook →</a></div>
+          
+        </div>
+        <div class="project-shot"><img src="california_shot.png" alt="California housing results: 20,640 block groups, 80 cross-validation fits, cross-validation R-squared 0.731 and test R-squared 0.722, best settings 9 neighbours with Manhattan distance and distance weighting"></div>
+      </div>
+      <div class="project">
+        <div class="project-meta">
+          <p class="p-title">Computer Vision: MNIST Digit Classification</p>
+          <p class="p-sub">Deep learning</p>
+          <div class="tags"><span class="tag">python</span><span class="tag">tensorflow</span><span class="tag">keras</span><span class="tag">tensorboard</span></div>
+          <p class="project-summary">Built a Keras neural network (two hidden layers with dropout) that classifies handwritten digits: 97.66% accuracy on 10,000 unseen test images, with F1-scores of 0.97 to 0.99 for every digit. Training and validation curves stayed close together, so the model did not overfit, and it was saved in the native Keras format.</p>
+          <div class="p-links"><a href="https://colab.research.google.com/drive/1KYdpuzRP8m-n0pLR0t7xbEOCJM5kDh-W?usp=sharing" target="_blank" rel="noopener">View notebook →</a></div>
+          
+        </div>
+        <div class="project-shot"><img src="mnist_shot.png" alt="MNIST results: 97.66% test accuracy, 109,386 trainable parameters, validation accuracy rose from 95.6% to 97.8% over 10 epochs, F1-score 0.97 to 0.99 for every digit"></div>
+      </div>
+      <div class="project">
+        <div class="project-meta">
+          <p class="p-title">NLP: BERT Embeddings &amp; Sentence Similarity</p>
+          <p class="p-sub">Natural language processing</p>
+          <div class="tags"><span class="tag">python</span><span class="tag">transformers</span><span class="tag">pytorch</span><span class="tag">scikit-learn</span></div>
+          <p class="project-summary">Used a pre-trained BERT model to turn sentences into contextual embeddings, then compared 10 sentence pairs with cosine similarity and a 0.7 threshold: 9 of 10 pairs were classified correctly. A polysemy test showed BERT giving the word &ldquo;bank&rdquo; different vectors in money and river sentences (0.80 vs about 0.5), where a static word vector would give the same one.</p>
+          <div class="p-links"><a href="https://colab.research.google.com/drive/19KsDhD-5kqljnG3WAK_8sgI7a0ca9dau?usp=sharing" target="_blank" rel="noopener">View notebook →</a></div>
+          
+        </div>
+        <div class="project-shot"><img src="bert_shot.png" alt="BERT sentence similarity results: 90% accuracy on 10 pairs, not-similar pairs scored 0.61 to 0.66, the word bank scores 0.80 between two money sentences and 0.47 against a river sentence"></div>
+      </div>
+
+      <div class="more-row">
+        <a class="btn-more" href="projects.html">View all projects →</a>
+        <span class="more-note">9 projects, from web scraping to deep learning and NLP</span>
+      </div>
+    </section>
+
+    <section id="lab-challenges">
+      <p class="label">Lab Challenges</p>
+      <h2>Challenge writeups</h2>
+
+      <div class="challenge">
+        <div class="challenge-meta">
+          <p class="c-title">Hotel Performance Dashboard</p>
+          <p class="c-sub">Data &amp; AI Specialist Program — Power BI End-to-End Project</p>
+          <div class="tags"><span class="tag">power bi</span><span class="tag">dax</span><span class="tag">data modeling</span></div>
+
+          <div class="c-block">
+            <h4>Problem Statement</h4>
+            <p>AtliQ Grands, a hotel chain, needed an interactive dashboard for revenue, occupancy,
+              and booking performance across its properties — something leadership could use for
+              high-level tracking and week-over-week comparison, built on five related tables
+              (dates, hotels, rooms, aggregated bookings, and individual bookings).</p>
+          </div>
+
+          <div class="c-block">
+            <h4>Approach</h4>
+            <ul>
+              <li>Modeled the relationships between the date, hotel, room, and two booking fact tables before building anything visual.</li>
+              <li>Built out 26 DAX measures and 2 calculated columns — core metrics (Revenue, Occupancy %, ADR, RevPAR, Realisation %) plus week-over-week change measures for each.</li>
+              <li>Laid out a single KPI-first view: top-line cards for Revenue, RevPAR, DSRN, Occupancy %, ADR, and Realisation % with week-over-week deltas, backed by trend and category charts (revenue by property category, key metrics by week, realisation/ADR by booking platform).</li>
+              <li>Added a detailed, sortable <strong>Property by Key Metrics</strong> table alongside the summary visuals — every property broken out by revenue, RevPAR, occupancy, ADR, DSRN, DBRN, DURN, realisation %, cancellation %, and average rating — plus City and Room Type filters, so the dashboard works for both a high-level glance and a property-level deep dive.</li>
+            </ul>
+          </div>
+
+          <div class="c-block">
+            <h4>Tools Used</h4>
+            <p>Power BI Desktop, DAX</p>
+          </div>
+
+          <div class="c-block">
+            <h4>Lessons Learned</h4>
+            <p>This was my first time working with Power BI, so most of the learning curve was just
+              getting comfortable with the tool itself — writing and debugging DAX measures, and
+              making sure every visual pulled from the right relationship across the five tables.</p>
+          </div>
+
+          <div class="c-links">
+            <a href="#" target="_blank" rel="noopener">View dashboard →</a>
+          </div>
+        </div>
+        <div class="challenge-shot"><img src="hotel_dashboard_shot.png" alt="Hotel performance Power BI dashboard, Home tab with top-line KPIs"></div>
+      </div>
+
+      <div class="challenge">
+        <div class="challenge-meta">
+          <p class="c-title">HR Management Dashboard</p>
+          <p class="c-sub">Data &amp; AI Specialist Program — Tableau End-to-End Project</p>
+          <div class="tags"><span class="tag">tableau</span><span class="tag">data modeling</span><span class="tag">hr analytics</span></div>
+
+          <div class="c-block">
+            <h4>Problem Statement</h4>
+            <p>An HR manager needed an interactive dashboard combining high-level summary views
+              with a detailed, filterable employee list — covering headcount, demographics, and
+              income analysis — so leadership could track workforce trends while still drilling
+              into individual employee records when needed.</p>
+          </div>
+
+          <div class="c-block">
+            <h4>Approach</h4>
+            <ul>
+              <li>Structured the summary view into three sections — Overview, Demographics, and Income Analysis — each answering a distinct question about the workforce.</li>
+              <li>Built 14 calculated fields covering age, tenure, hiring/termination status, and ranking logic (Age, Age Group, Status, Full Name, Total/% Hired, Total/% Active, Total/% Terminated, Duration of Hire, Top 2 Rank, and highlighted-max measures).</li>
+              <li>Added a full employee list — name, department, position, gender, age, education, salary — filterable by any column, alongside the summary dashboards.</li>
+            </ul>
+          </div>
+
+          <div class="c-block">
+            <h4>Tools Used</h4>
+            <p>Tableau Public</p>
+          </div>
+
+          <div class="c-block">
+            <h4>Lessons Learned</h4>
+            <p>This was also my first time working with Tableau, and the biggest adjustment was its
+              container-based layout — you have to plan and set up the containers before placing any
+              visuals, rather than dropping things onto the canvas and arranging them afterward.
+              Keeping every element correctly nested and positioned inside those containers took real
+              care and a few re-dos.</p>
+          </div>
+
+          <div class="c-links">
+            <a href="https://public.tableau.com/app/profile/chelsea.mogore/viz/Chelsea_Mogore_Week05_TableauProject/HRDashboard" target="_blank" rel="noopener">View dashboard →</a>
+          </div>
+        </div>
+        <div class="challenge-shot"><img src="hr_dashboard_shot.png" alt="HR management Tableau dashboard, Overview tab with top-line KPIs"></div>
+      </div>
+
+    </section>
+
+    <section id="contact">
+      <p class="label">Contact</p>
+      <h2>Get in touch</h2>
+      <div class="contact-row">
+        <a href="mailto:mogorechelsea@gmail.com">mogorechelsea@gmail.com</a>
+        <a href="https://github.com/CMogore" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/chelsea-mogore/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+
+    <footer>Chelsea Mogore · Nairobi, Kenya</footer>
+
+  </div>
+</div>
+
+</body>
+</html>

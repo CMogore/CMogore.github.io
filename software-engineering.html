@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chelsea Mogore — Software Engineer</title>
+<meta name="description" content="Chelsea Mogore's software engineering work: full-stack systems with Vue.js and Laravel, API integrations and messaging queues.">
+<meta property="og:title" content="Chelsea Mogore — Software Engineer">
+<meta property="og:description" content="Chelsea Mogore's software engineering work: full-stack systems with Vue.js and Laravel, API integrations and messaging queues.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Archivo:wght@500;600;700;900&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EBE9E1; --panel: #FFFFFF; --ink: #2A1810; --ink-soft: #7A5C4E; --rule: #DAD5C8;
+    --orange: #E43D12; --rose: #D6536D; --pink: #FFA2B6; --gold: #EFB11D;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Newsreader', Georgia, serif; font-size: 17px; line-height: 1.6; }
+  h1, h2, h3, .label, nav a, .btn { font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+  a { color: inherit; }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  .main-col { padding: 0 48px 96px 48px; }
+
+  header { display: flex; justify-content: space-between; align-items: baseline; padding: 40px 0 56px 0; border-bottom: 1px solid var(--rule); flex-wrap: wrap; gap: 16px; }
+  .brand { font-weight: 900; font-size: 18px; letter-spacing: -0.01em; color: var(--orange); text-decoration: none; }
+  nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+  nav a { font-size: 13px; font-weight: 700; text-decoration: none; color: var(--ink); border-bottom: 1px solid transparent; padding-bottom: 2px; transition: color 0.15s ease, border-color 0.15s ease; }
+  nav a:hover { color: var(--orange); border-color: var(--orange); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); display: inline-block; }
+  nav a.switch { color: var(--rose); }
+
+  .page-header { padding: 48px 0 40px 0; border-bottom: 1px solid var(--rule); }
+  .page-header .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--orange); margin: 0 0 18px 0; }
+  .page-header .lede { font-size: 18px; color: var(--ink-soft); max-width: 62ch; margin: 24px 0 0 0; }
+
+  .hero-mega { font-family: 'Archivo', sans-serif; font-weight: 900; font-size: clamp(48px, 8vw, 100px); line-height: 0.9; letter-spacing: -0.03em; margin: 0; color: var(--orange); text-transform: uppercase; }
+  .hero-mega .l2 { color: var(--rose); }
+  .hero-mega .l3 { color: transparent; -webkit-text-stroke: 2px var(--orange); }
+
+  section { padding: 56px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+  .label { font-size: 13px; font-weight: 700; color: var(--rose); margin: 0 0 18px 0; text-transform: uppercase; letter-spacing: 0.04em; }
+  section h2 { font-family: 'Archivo', sans-serif; font-size: 32px; font-weight: 900; letter-spacing: -0.015em; margin: 0 0 24px 0; color: var(--ink); }
+
+  .resume-block { margin-bottom: 36px; }
+  .resume-block h3 { font-family: 'Archivo', sans-serif; font-size: 18px; font-weight: 700; margin: 0 0 14px 0; color: var(--ink); }
+  .edu-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; flex-wrap: wrap; gap: 8px; }
+  .edu-row .org { font-weight: 600; font-size: 16px; }
+  .edu-row .dates { font-size: 13px; color: var(--ink-soft); font-family: 'IBM Plex Mono', monospace; }
+  .resume-block p.role { margin: 0 0 10px 0; color: var(--ink-soft); font-size: 15px; }
+  ul.resume-list { margin: 0; padding-left: 20px; }
+  ul.resume-list li { margin-bottom: 8px; font-size: 15.5px; }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 8px; }
+  .skill-group .g-title { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 500; color: var(--orange); margin-bottom: 10px; }
+  .skill-group p { margin: 0; font-size: 14.5px; color: var(--ink); line-height: 1.7; }
+
+  .project { display: grid; grid-template-columns: 1fr 1.3fr; gap: 32px; padding: 32px 0; border-top: 1px solid var(--rule); }
+  .project:first-of-type { border-top: none; padding-top: 0; }
+  .project-meta .p-title { font-family: 'Archivo', sans-serif; font-size: 22px; font-weight: 900; margin: 0 0 8px 0; color: var(--ink); }
+  .project-meta .p-sub { font-size: 13px; color: var(--ink-soft); margin-bottom: 14px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .tag { font-size: 11px; font-family: 'IBM Plex Mono', monospace; background: var(--pink); color: #6E1E2E; padding: 3px 9px; border-radius: 20px; }
+  .project-summary { font-size: 15px; color: var(--ink-soft); margin: 0 0 14px 0; }
+  ul.project-highlights { margin: 0; padding-left: 20px; }
+  ul.project-highlights li { font-size: 15px; color: var(--ink); margin-bottom: 6px; }
+
+  .project-shot { background: var(--panel); border: 2px solid var(--ink); border-radius: 6px; overflow: hidden; align-self: start; }
+  .project-shot img { width: 100%; height: auto; display: block; }
+  .more-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; padding-top: 32px; border-top: 1px solid var(--rule); }
+  .btn-more { font-family: 'Archivo', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; color: #fff; background: var(--orange); padding: 12px 22px; border-radius: 4px; transition: background 0.15s ease; }
+  .btn-more:hover { background: var(--rose); }
+  .more-note { font-size: 14px; color: var(--ink-soft); }
+
+  .contact-row { display: flex; gap: 32px; flex-wrap: wrap; align-items: baseline; }
+  .contact-row a { font-size: 16px; font-weight: 700; text-decoration: none; color: var(--orange); border-bottom: 2px solid var(--gold); }
+
+  footer { padding: 32px 0 60px 48px; font-size: 13px; color: var(--ink-soft); max-width: 1180px; margin: 0 auto; }
+
+  @media (max-width: 760px) {
+    .main-col { padding: 0 20px 60px 20px; }
+    footer { padding-left: 20px; }
+    header { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .project { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="main-col">
+
+    <header>
+      <a class="brand" href="index.html">Chelsea Mogore</a>
+      <nav>
+        <a href="index.html">Home</a><span class="dot"></span>
+        <a href="#resume">Resume</a><span class="dot"></span>
+        <a href="#projects">Projects</a><span class="dot"></span>
+        <a href="software-projects.html">All Projects</a><span class="dot"></span>
+        <a href="#contact">Contact</a><span class="dot"></span>
+        <a class="switch" href="data-ai.html">Data &amp; AI →</a>
+      </nav>
+    </header>
+
+    <section class="page-header">
+      <p class="eyebrow">CHELSEA MOGORE · SOFTWARE ENGINEERING</p>
+      <h1 class="hero-mega">Solid <span class="l2">code,</span><br><span class="l3">scalable</span> systems</h1>
+      <p class="lede">Building production systems in the financial sector — Vue.js and Laravel on the
+        frontend and backend, MySQL underneath, and API/messaging integrations that keep everything talking
+        to each other reliably.</p>
+    </section>
+
+    <section id="resume">
+      <p class="label">Resume</p>
+      <h2>Background</h2>
+
+      <div class="resume-block">
+        <h3>Education</h3>
+        <div class="edu-row">
+          <span class="org">Strathmore University</span>
+          <span class="dates">2020 – 2024</span>
+        </div>
+        <p class="role">B.Sc. Informatics and Computer Science</p>
+        <ul class="resume-list">
+          <li>Graduated with First Class Honours; placed on the Dean's List.</li>
+          <li>Relevant coursework: Data Structures &amp; Algorithms, AI &amp; Machine Learning.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <h3>Work Experience</h3>
+        <div class="edu-row">
+          <span class="org">Cytonn Investments — Software Engineering Assistant</span>
+          <span class="dates">March 2024 – Present</span>
+        </div>
+        <ul class="resume-list">
+          <li>Built a ticketing system to centralize IT and client support inquiries, eliminating manual email/spreadsheet tracking and improving visibility into open issues.</li>
+          <li>Integrated the Gmail API with Pub/Sub into the ticketing workflow to auto-convert emails into support tickets and trigger real-time notifications.</li>
+          <li>Developed and optimized commission calculation modules for unit funds, automating payout workflows and eliminating manual errors in financial reporting.</li>
+          <li>Enhanced KYC and client onboarding workflows with document upload/approval modules, reducing account setup delays and improving client experience.</li>
+          <li>Implemented RabbitMQ-based messaging queues for asynchronous tasks, boosting system reliability during peak activity.</li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <h3>Skills</h3>
+        <div class="skills-grid">
+          <div class="skill-group"><p class="g-title">FRONTEND</p><p>Vue.js, HTML, CSS, JavaScript, Tailwind CSS, Foundation</p></div>
+          <div class="skill-group"><p class="g-title">BACKEND &amp; LANGUAGES</p><p>Laravel, Node.js, PHP, MySQL, CodeIgniter, REST APIs, Python, Java</p></div>
+          <div class="skill-group"><p class="g-title">CLOUD &amp; INFRASTRUCTURE</p><p>Google Cloud Console, Docker, Vagrant, Homestead, Ansible</p></div>
+          <div class="skill-group"><p class="g-title">MESSAGING &amp; INTEGRATIONS</p><p>RabbitMQ, Gmail API (Pub/Sub, OAuth)</p></div>
+          <div class="skill-group"><p class="g-title">TOOLS &amp; PLATFORMS</p><p>GitHub, Figma, Agile methodologies, Microsoft Office Suite</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <p class="label">Projects</p>
+      <h2>Featured work</h2>
+
+      <div class="project">
+        <div class="project-meta">
+          <p class="p-title">CySacco</p>
+          <p class="p-sub">Full-stack SACCO management system</p>
+          <div class="tags"><span class="tag">vue.js</span><span class="tag">laravel</span><span class="tag">sql</span></div>
+          <p class="project-summary">A full-stack system built with a Vue.js frontend, Laravel REST APIs,
+            and a SQL database, handling the day-to-day operations of a savings and credit cooperative.</p>
+          <ul class="project-highlights">
+            <li>User management, contributions tracking, and share transfers.</li>
+            <li>Loan management with approvals, rejections, and notifications.</li>
+            <li>Automated monthly statements and email reminders, reducing default rates and improving member engagement.</li>
+          </ul>
+        </div>
+        <div class="project-shot"><img src="cysacco_shot.png" alt="CySacco summary: Vue.js frontend, Laravel REST APIs, SQL database, with user management, contributions, share transfers, loans, statements and reminders"></div>
+      </div>
+
+      <div class="project">
+        <div class="project-meta">
+          <p class="p-title">Sign Language Translation</p>
+          <p class="p-sub">Real-time Kenyan Sign Language → English</p>
+          <div class="tags"><span class="tag">python</span><span class="tag">lstm</span><span class="tag">machine learning</span></div>
+          <p class="project-summary">A real-time translation tool converting Kenyan Sign Language into
+            English, built as a proof-of-concept for accessibility in education and communication.</p>
+          <ul class="project-highlights">
+            <li>Leveraged an LSTM model in Python to translate alphabets into words and construct sentences.</li>
+            <li>Successfully deployed as a working proof-of-concept.</li>
+          </ul>
+        </div>
+        <div class="project-shot"><img src="sign_shot.png" alt="Sign language translation summary: an LSTM model in Python translating Kenyan Sign Language alphabets into words and sentences in English, deployed as a proof-of-concept"></div>
+      </div>
+
+      <div class="more-row">
+        <a class="btn-more" href="software-projects.html">View all projects →</a>
+        <span class="more-note">2 projects so far, with more to come</span>
+      </div>
+    </section>
+
+    <section id="contact">
+      <p class="label">Contact</p>
+      <h2>Get in touch</h2>
+      <div class="contact-row">
+        <a href="mailto:mogorechelsea@gmail.com">mogorechelsea@gmail.com</a>
+        <a href="https://github.com/CMogore" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/chelsea-mogore/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+
+    <footer>Chelsea Mogore · Nairobi, Kenya</footer>
+
+  </div>
+</div>
+
+</body>
+</html>
